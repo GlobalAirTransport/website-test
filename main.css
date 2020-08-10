@@ -1,0 +1,98 @@
+#repayTimeSeat {
+    background-color: grey;
+    margin: 7px;
+    /*width: 15px;*/
+    box-sizing: content-box;
+    border: 1px solid #000000;
+    border-radius: 6px;
+    font-size: 12px;
+    color: #000;
+    background-color: #ffffff;
+    background-position: 10px 10px;
+    background-repeat: no-repeat;
+    padding: 8px 15px 8px 30px;
+    transition: width 0.4s ease-in-out;
+    width: 80%;
+}
+#mmp {
+    height: 75vh;
+    width: 90vw;
+    margin-left: auto;
+    margin-right: auto;
+}
+.hide {
+    display: none;
+}
+.topimg {
+    width: 26px;
+    height: 16px;
+}
+.content input, select, option {
+    width: 90%;
+    max-width: 250px;
+    padding: 8px 20px;
+    margin: auto;
+    display: block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    -webkit-border-radius: 6px;
+       -moz-border-radius: 6px;
+            border-radius: 6px;
+}
+.content input:hover, select:hover, option:hover {
+    -webkit-box-shadow: 0px 0px 4px #4195fc;
+       -moz-box-shadow: 0px 0px 4px #4195fc;
+            box-shadow: 0px 0px 4px #4195fc;
+}
+.content button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 6px;
+}
+.content button:hover {
+    background-color: #268129;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 6px;
+}
+label {
+    display: block;
+}
+.form-control {
+    display: none;
+}
+.alert {
+    padding: 20px;
+    background-color: #f44336;
+    color: white;
+    margin-bottom: 15px;
+    border-radius: 6px;
+}
+.closebtn {
+    margin-left: 15px;
+    color: white;
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.closebtn:hover {
+    color: black;
+} 

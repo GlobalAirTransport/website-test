@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="navbar.css">
+        <link rel="stylesheet" href="main.css">
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+        integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+        crossorigin=""/>
+        <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+        integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+        crossorigin=""></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script>
+            function navbar() {
+                var x = document.getElementById("topnav");
+                if (x.className === "topnav") {
+                    x.className += " responsive";
+                } else {
+                    x.className = "topnav";
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <div class="total-content" style="text-align: center; vertical-align: center">
+            <div class="input-form">
+                <div class="topnav" id="topnav">
+                    <div class="dropdown">
+                        <button class="dropbtn">Home
+                            <i class="fa fa-caret-down"></i>
+                        </button>
+                        <div class="dropdown-content">
+                            <a href="#" onclick="showHome()">Home</a>
+                             <a href="#" onclick="showAbout()">About</a>
+                            <a href="#" onclick="showFaq()">FAQ</a>
+                        </div>
+                    </div>
+                    <div class="dropdown">
+                        <button class="dropbtn">PAX
+                            <i class="fa fa-caret-down"></i>
+                        </button>
+                        <div class="dropdown-content">
+                            <a href="#" onclick='showPaxTicket()'>Ticket Price</a>
+                            <a href="#" onclick="showPaxConfig()">Configuration</a>
+                            <a href="#" onclick="showPaxProfit()">Profit</a>
+                        </div>
+                    </div>
+                    <div class="dropdown">
+                        <button class="dropbtn">Cargo
+                            <i class="fa fa-caret-down"></i>
+                        </button>
+                        <div class="dropdown-content">
+                            <a href="#" onclick="showCTicket()">Ticket Price</a>
+                            <a href="#" onclick="showCConfig()">Configuration</a>
+                            <a href="#" onclick="showCProfit()">Profit</a>
+                        </div>
+                    </div>
+                    <div class="dropdown">
+                        <button class="dropbtn">Other
+                            <i class="fa fa-caret-down"></i>
+                        </button>
+                        <div class="dropdown-content">
+                            <a href="#" onclick="showStopover()">Stopover</a>
+                            <a href="#" onclick="showMMap()">Market% Map</a>
+                            <a href="#" onclick="showACSearch()">A/C Search</a>
+                            <a href="#" onclick="showResellCalc()">Resell Value</a>
+                        </div>
+                    </div>
+                    <div class="dropdown">
+                        <button class="dropbtn">Guides
+                            <i class="fa fa-caret-down"></i>
+                        </button>
+                        <div class="dropdown-content">
+                            <a href="#" onclick="alert('Will be added soon.')">Will be added soon</a>
+                            <a href="#" onclick="alert('Will be added soon.')">Will be added soon</a>
+                            <a href="#" onclick="alert('Will be added soon.')">Will be added soon</a>
+                        </div>
+                    </div>
+                    <div class="dropdown">
+                        <button class="dropbtn"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Flag_of_the_United_States.svg/200px-Flag_of_the_United_States.svg.png" class="topimg"></img>
+                            <i class="fa fa-caret-down"></i>
+                        </button>
+                        <div class="dropdown-content">
+                            <a href="#" onclick="alert('Language already set to English.')"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Flag_of_the_United_States.svg/200px-Flag_of_the_United_States.svg.png" class="topimg"></img>English</a>
+                            <a href="#" onclick="alert('Will be added soon.')"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Flag_of_Germany.svg/200px-Flag_of_Germany.svg.png" class="topimg"></img>German</a>
+                            <a href="#" onclick="alert('Will be added soon.')"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Flag_of_Spain.svg/200px-Flag_of_Spain.svg.png" class="topimg"></img>Spanish</a>
+                            <a href="#" onclick="alert('Will be added soon.')"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Flag_of_France.svg/200px-Flag_of_France.svg.png" class="topimg"></img>French</a>
+                        </div>
+                    </div>
+                    <!--Make a dropdown for this info stuff-->
+                    <a href="javascript:void(0);" class="icon" onclick="navbar()">&#9776;</a>
+                </div>
+                <div class="alert" id="al" style="display: none">
+                    <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+                    Please fill in everything correctly!
+                  </div> 
+                <div class="content">
+                    <div id="home">
+                            <h3>AM4info Guides And Tools</h3>
+                            <p>Our AM4info.com website is finally available!</p>
+                            More release notes will be added soon
+                            <!--More release notes here-->
+                    </div>
+                    <div id="paxticket" class="hide">
+                    <h4>PAX Ticket Calculator</h4>
+                    <label for="distancePaxTicket">Route Distance</label>
+                    <input type="number" id="distancePaxTicket" placeholder="Distance (km)"><br>
+                    <button onclick="paxticket()">Calculate!</button><br><br>
+                    <label for="yTicketRealism">Economy Class (Realism)</label>
+                    <input type="text" id="yTicketRealism" class="form-control" readonly><br>
+                    <label for="jTicketRealism">Business Class (Realism)</label>
+                    <input type="text" id="jTicketRealism" class="form-control" readonly><br>
+                    <label for="fTicketRealism">First Class (Realism)</label>
+                    <input type="text" id="fTicketRealism" class="form-control" readonly><br>
+                    <label for="yTicketEasy">Economy Class (Easy)</label>
+                    <input type="text" id="yTicketEasy" class="form-control" readonly><br>
+                    <label for="jTicketEasy">Business Class (Easy)</label>
+                    <input type="text" id="jTicketEasy" class="form-control" readonly><br>
+                    <label for="fTicketEasy">First Class (Easy)</label>
+                    <input type="text" id="fTicketEasy" class="form-control" readonly><br>
+                    </div>
+                    <div id="paxconfig" class="hide">
+                    <h4>PAX Seat Calculator</h4>
+                    <select id="modeSSeat">
+                        <option>Realism</option>
+                        <option>Easy</option>
+                    </select><br>
+                    <select id="cModeSeat">
+                        <option>Normal</option>
+                        <option>Max. Demand Usage</option>
+                    </select><br>
+                    <label for="capacitySeat">Capacity</label>
+                    <input type="number" id="capacitySeat" placeholder="Capacity"><br>
+                    <label for="distanceSeat">Route Distance</label>
+                    <input type="number" id="distanceSeat" placeholder="Distance (km)"><br>
+                    <label for="flDaySeat">Flights Per Day</label>
+                    <input type="number" id="flDaySeat" placeholder="Flights Per Day"><br>
+                    <label for="yDemandSeat">Y-Class Demand</label>
+                    <input type="number" id="yDemandSeat" placeholder="Y-Class Demand"><br>
+                    <label for="jDemandSeat">J-Class Demand</label>
+                    <input type="number" id="jDemandSeat" placeholder="J-Class Demand"><br>
+                    <label for="fDemandSeat">F-Class Demand</label>
+                    <input type="number" id="fDemandSeat" placeholder="F-Class Demand"><br>
+                    <button onclick="paxseats()">Calculate!</button><br>
+                    <p id="seatTxt">If you want to keep the plane longer than
+                        <span id="repayTimeSeat"></span>days, use:
+                    </p>
+                    <label for="seatOutputY>">Economy Class Seats</label>
+                    <input type="number" id="seatOutputY" class="form-control" readonly><br>
+                    <label for="seatOutputJ>">Business Class Seats</label>
+                    <input type="number" id="seatOutputJ" class="form-control" readonly><br>
+                    <label for="seatOutputF>">First Class Seats</label>
+                    <input type="number" id="seatOutputF" class="form-control" readonly><br>
+                    <p>Otherwise use this:</p>
+                    <label for="seatAltY>">Economy Class Seats</label>
+                    <input type="number" id="seatAltY" class="form-control" readonly><br>
+                    <label for="seatAltJ>">Business Class Seats</label>
+                    <input type="number" id="seatAltJ" class="form-control" readonly><br>
+                    <label for="seatAltF>">First Class Seats</label>
+                    <input type="number" id="seatAltF" class="form-control" readonly><br>
+                    </div>
+                    <div id="paxprofit" class="hide">
+                    <h4>PAX Profit Calculator</h4>
+                    <select id="modeSProfit">
+                        <option>Realism</option>
+                        <option>Easy</option>
+                    </select><br>
+                    <label for="airplaneProfit">Aircraft Type</label>
+                    <input list="acList" type="text" id="airplaneProfit" placeholder="Aircraft Type"><br>
+                    <label for="distanceProfit">Route Distance</label>
+                    <input type="number" id="distanceProfit" placeholder="Distance (km)"><br>        
+                    <label for="ySeatsProfit">Y-Class Seats</label>
+                    <input type="number" id="ySeatsProfit" placeholder="Y-Class Seats"><br>        
+                    <label for="jSeatsProfit">J-Class Seats</label>
+                    <input type="number" id="jSeatsProfit" placeholder="J-Class Seats"><br>        
+                    <label for="fSeatsProfit">F-Class Seats</label>
+                    <input type="number" id="fSeatsProfit"  placeholder="F-Class Seats"><br>        
+                    <label for="flDayProfit">Flights Per Day</label>
+                    <input type="number" id="flDayProfit" placeholder="Flights Per Day"><br>        
+                    <label for="reptProfit">Reputation</label>
+                    <input type="number" id="reptProfit" placeholder="Reputation (%)" max="99"><br>        
+                    <label for="fPrxProfit">Fuel Price</label>
+                    <input type="number" id="fPrxProfit" placeholder="Fuel Price / 1000 lbs"><br>         
+                    <label for="cPrxProfit">CO2 Quota Price</label>
+                    <input type="number" id="cPrxProfit" placeholder="CO2 Price / 1000 quotas"><br>                    
+                    <datalist id="acList">
+                    </datalist>
+                    <button onclick="paxprofit()">Calculate!</button><br><br>
+                    <label for="perFlightProfit">Profit Per Flight</label>
+                    <input type="text" id="perFlightProfit" class="form-control" readonly><br>  
+                    <label for="perDayProfit">Profit Per Day</label>
+                    <input type="text" id="perDayProfit" class="form-control" readonly><br>  
+                    </div>
+                    <div id="cticket" class="hide">
+                    <h4>Cargo Ticket Calculator</h4>
+                    <label for="distanceCTicket">Route Distance</label>
+                    <input type="number" id="distanceCTicket" placeholder="Distance (km)"><br>
+                    <button onclick="cticket()">Calculate!</button><br><br>
+                    <label for="lTicketRealism">Large Load (Realism)</label>
+                    <input type="text" id="lTicketRealism" class="form-control" readonly><br>
+                    <label for="hTicketRealism">Heavy Load (Easy)</label>
+                    <input type="text" id="hTicketRealism" class="form-control" readonly><br>
+                    <label for="lTicketEasy">Large Load (Realism)</label>
+                    <input type="text" id="lTicketEasy" class="form-control" readonly><br>
+                    <label for="hTicketEasy">Heavy Load (Realism)</label>
+                    <input type="text" id="hTicketEasy" class="form-control" readonly><br>
+                    </div>
+                    <div id="cconfig" class="hide">
+                    <h4>Cargo Configuration Calculator</h4>
+                    <select id="cModeLoad">
+                        <option>Normal</option>
+                        <option>Max. Demand Usage</option>
+                    </select><br>
+                    <label for="capacityLoad">Capacity</label>
+                    <input type="number" id="capacityLoad" placeholder="Capacity"><br>
+                    <label for="lDemandLoad">Large Load Demand</label>
+                    <input type="number" id="lDemandLoad" placeholder="Large Load Demand (lbs/day)"><br>
+                    <label for="hDemandLoad">Heavy Load Demand</label>
+                    <input type="number" id="hDemandLoad" placeholder="Heavy Load Demand (lbs/day)"><br>
+                    <label for="flDayLoad">Flights Per Day</label>
+                    <input type="number" id="flDayLoad" placeholder="Flights Per Day"><br>
+                    <button onclick="cseats()">Calculate!</button><br><br>
+                    <label for="largeOutput">Large Load</label>
+                    <input type="text" id="largeOutput" class="form-control" readonly><br>
+                    <label for="heavyOutput">Capacity</label>
+                    <input type="text" id="heavyOutput" class="form-control" readonly><br>
+                    </div>
+                    <div id="cprofit" class="hide">
+                    <h4>Cargo Profit Calculator</h4>
+                    <select id="modeSCP">
+                        <option>Realism</option>
+                        <option>Easy</option>
+                    </select><br>
+                    <label for="airplaneCP">Aircraft Type</label>
+                    <input list="cargolist" type="text" id="airplaneCP" placeholder="Aircraft Type"><br>
+                    <label for="distanceCP">Route Distance</label>
+                    <input type="number" id="distanceCP" placeholder="Distance (km)"><br>        
+                    <label for="lCapCP">Large Load Capacity</label>
+                    <input type="number" id="lCapCP" placeholder="Large Load Capacity (lbs)"><br>        
+                    <label for="hCapCP">Heavy Load Capacity</label>
+                    <input type="number" id="hCapCP" placeholder="Heavy Load Capacity (lbs)"><br>        
+                    <label for="flDayCP">Flights Per Day</label>
+                    <input type="number" id="flDayCP" placeholder="Flights Per Day"><br>        
+                    <label for="reptCP">Reputation</label>
+                    <input type="number" id="reptCP" placeholder="Reputation (%)" max="99"><br>        
+                    <label for="fPrxCP">Fuel Price</label>
+                    <input type="number" id="fPrxCP" placeholder="Fuel Price / 1000 lbs"><br>         
+                    <label for="cPrxCP">CO2 Quota Price</label>
+                    <input type="number" id="cPrxCP" placeholder="CO2 Price / 1000 quotas"><br>
+                    <button onclick="cprofit()">Calculate!</button><br><br>
+                    <datalist id="cargolist">
+                        <option value="DC3"></option>
+                        <option value="DC9"></option>
+                        <option value="B727-200F"></option>
+                        <option value="B377SG"></option>
+                        <option value="A310-300F"></option>
+                        <option value="A400M"></option>
+                        <option value="IL-76D"></option>
+                        <option value="B757-200F"></option>
+                        <option value="A300-600F"></option>
+                        <option value="IL-96T"></option>
+                        <option value="B767-300F"></option>
+                        <option value="A330-200F"></option>
+                        <option value="B777 Freighter"></option>
+                        <option value="B747-400F"></option>
+                        <option value="B747-8F"></option>
+                        <option value="AN-124"></option>
+                        <option value="A380-800F"></option>
+                        <option value="AN-225"></option>
+                    </datalist> 
+                    <label for="flightProfitC">Profit Per Flight</label>
+                    <input type="text" id="flightProfitC" class="form-control" readonly><br>
+                    <label for="dayProfitC">Profit Per Day</label>
+                    <input type="text" id="dayProfitC" class="form-control" readonly><br>
+                    </div>
+                    <div id="stopover" class="hide">
+                    <h4>Stopover Finder</h4>
+                    <label for="departStopover">Departure</label>
+                    <input list="depListStopover" type="text" id="departStopover" placeholder="IATA/ICAO/City Name"><br>
+                    
+                    <label for="arrivalStopover">Destination</label>
+                    <input list="arrListStopover" type="text" id="arrivalStopover" placeholder="IATA/ICAO/City Name"><br>
+    
+                    <label for="rangeStopover">Aircraft Range</label>
+                    <input type="number" id="rangeStopover" placeholder="Range (km)"><br>
+                    
+                    <label for="rwyStopover">Runway Requirement (optional)</label>
+                    <input type="number" id="rwyStopover" placeholder="Runway Requirement (ft)"><br>
+    
+                    <button onclick="search()">Search!</button><br><br>
+    
+                    <label for="stopoverStopover">Stopover Airport</label>
+                    <input type="text" id="stopoverStopover" class="form-control" placeholder="Stopover Airport" readonly><br>
+
+                    <label for="iciaStopover">IATA/ICAO</label>
+                    <input type="text" id="iciaStopover" class="form-control" placeholder="IATA/ICAO" readonly><br>
+
+                    <label for="distanceStopover">Additional Distance</label>
+                    <input type="text" id="distanceStopover" class="form-control" placeholder="Additional Distance" readonly><br>
+
+                    <label for="totDistStopover">Total Distance</label>
+                    <input type="text" id="totDistStopover" class="form-control" placeholder="total Distance" readonly><br>
+
+                    <datalist id="depListStopover"></datalist>
+                    <datalist id="arrListStopover"></datalist>
+                    </div>
+                    <div id="marketmap" class="hide">
+                        <br>
+                        <br>
+                        <div id="mmp"></div>
+                    </div>
+                    <div id="acsearch" class="hide">
+                    Will be added soon.
+                    </div>
+                    <div id="resell" class="hide">
+                    <h4>Resell Value Calculator</h4>
+                    <label for="airplaneResell">Aircraft Type</label>
+                    <input list="acListResell" type="text" id="airplaneResell" placeholder="Aircraft Type"><br>
+                    <label for="marketPercentResell">Market%</label>
+                    <input type="number" id="marketPercentResell" placeholder="Market Percent"><br>
+                    <label for="jSeatsResell">J-Class Seats</label>
+                    <input type="number" id="jSeatsResell" placeholder="J-Class Seats"><br>
+                    <label for="fSeatsResell">F-Class Seats</label>
+                    <input type="number" id="fSeatsResell" placeholder="F-Class Seats"><br>
+                    <label for="hoursResell">Flight Hours</label>
+                    <input type="number" id="hoursResell" placeholder="Flight Hours"><br>
+                    <button onclick="resell()">Calculate!</button><br><br>
+                    <label for="resellV">Resell Value</label>
+                    <input type="text" id="resellV" class="form-control" readonly>
+                    <datalist id="acListResell">
+                    </datalist>
+                    </div>
+                    <div id="about" class="hide">
+                        <p>Will be added soon</p>
+                    </div>
+                    <div id="faq" class="hide">
+                        <p>Will be added soon</p>
+                    </div>
+                </div>
+                <script src="script.js"></script>
+                <script src="profitscript.js"></script>
+                <script src="stopover.js"></script>
+                <script src="market.js"></script>
+                <script src="resell.js"></script>
+            </div>
+        </div>
+    </body>
+</html><!--https://cdn.jsdelivr.net/gh/GlobalAirTransport/fullwebsitev0.1/-->
