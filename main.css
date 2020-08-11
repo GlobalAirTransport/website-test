@@ -79,9 +79,12 @@ label {
 .alert {
   position: -webkit-sticky;
   position: sticky;
+  width: 90%;
+  max-width: 250px;
   top: 0;
   padding: 20px;
-  background-color: #f44336;
+  background-color: #fa3737;
+  border: 1px #a1000b;
   border-radius: 6px;
   color: white;
 }
