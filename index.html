@@ -2,14 +2,15 @@
 <html>
     <head>
         <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="navbar.css" type="text/css"></link>
         <link rel="stylesheet" href="main.css" type="text/css"></link>
-        <link href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
         integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
-        crossorigin=""></link>
+        crossorigin="" type="text/css"></link>
         <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
         integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
-        crossorigin=""></script>
+        crossorigin="" type="text/javascript"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script>
             function navbar() {
@@ -28,67 +29,60 @@
                 <div class="topnav" id="topnav">
                     <div class="dropdown">
                         <button class="dropbtn">Home
-                            <i class="fa fa-caret-down"></i>
                         </button>
                         <div class="dropdown-content">
-                            <a href="#" onclick="showHome()">Home</a>
-                             <a href="#" onclick="showAbout()">About</a>
-                            <a href="#" onclick="showFaq()">FAQ</a>
+                            <a href="javascript:void(0)" onclick="showHome()">Home</a>
+                             <a href="javascript:void(0)" onclick="showAbout()">About</a>
+                            <a href="javascript:void(0)" onclick="showFaq()">FAQ</a>
                         </div>
                     </div>
                     <div class="dropdown">
                         <button class="dropbtn">PAX
-                            <i class="fa fa-caret-down"></i>
                         </button>
                         <div class="dropdown-content">
-                            <a href="#" onclick='showPaxTicket()'>Ticket Price</a>
-                            <a href="#" onclick="showPaxConfig()">Configuration</a>
-                            <a href="#" onclick="showPaxProfit()">Profit</a>
+                            <a href="javascript:void(0)" onclick='showPaxTicket()'>Ticket Price</a>
+                            <a href="javascript:void(0)" onclick="showPaxConfig()">Configuration</a>
+                            <a href="javascript:void(0)" onclick="showPaxProfit()">Profit</a>
                         </div>
                     </div>
                     <div class="dropdown">
                         <button class="dropbtn">Cargo
-                            <i class="fa fa-caret-down"></i>
                         </button>
                         <div class="dropdown-content">
-                            <a href="#" onclick="showCTicket()">Ticket Price</a>
-                            <a href="#" onclick="showCConfig()">Configuration</a>
-                            <a href="#" onclick="showCProfit()">Profit</a>
+                            <a href="javascript:void(0)" onclick="showCTicket()">Ticket Price</a>
+                            <a href="javascript:void(0)" onclick="showCConfig()">Configuration</a>
+                            <a href="javascript:void(0)" onclick="showCProfit()">Profit</a>
                         </div>
                     </div>
                     <div class="dropdown">
                         <button class="dropbtn">Other
-                            <i class="fa fa-caret-down"></i>
                         </button>
                         <div class="dropdown-content">
-                            <a href="#" onclick="showStopover()">Stopover</a>
-                            <a href="#" onclick="showMMap()">Market% Map</a>
-                            <a href="#" onclick="showACSearch()">A/C Search</a>
-                            <a href="#" onclick="showResellCalc()">Resell Value</a>
+                            <a href="javascript:void(0)" onclick="showStopover()">Stopover</a>
+                            <a href="javascript:void(0)" onclick="showMMap()">Market% Map</a>
+                            <a href="javascript:void(0)" onclick="showACSearch()">A/C Search</a>
+                            <a href="javascript:void(0)" onclick="showResellCalc()">Resell Value</a>
                         </div>
                     </div>
                     <div class="dropdown">
                         <button class="dropbtn">Guides
-                            <i class="fa fa-caret-down"></i>
                         </button>
                         <div class="dropdown-content">
-                            <a href="#" onclick="alert('Will be added soon.')">Will be added soon</a>
-                            <a href="#" onclick="alert('Will be added soon.')">Will be added soon</a>
-                            <a href="#" onclick="alert('Will be added soon.')">Will be added soon</a>
+                            <a href="javascript:void(0)" onclick="alert('Will be added soon.')">Will be added soon</a>
+                            <a href="javascript:void(0)" onclick="alert('Will be added soon.')">Will be added soon</a>
+                            <a href="javascript:void(0)" onclick="alert('Will be added soon.')">Will be added soon</a>
                         </div>
                     </div>
                     <div class="dropdown">
                         <button class="dropbtn"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Flag_of_the_United_States.svg/200px-Flag_of_the_United_States.svg.png" class="topimg"></img>
-                            <i class="fa fa-caret-down"></i>
                         </button>
                         <div class="dropdown-content">
-                            <a href="#" onclick="alert('Language already set to English.')"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Flag_of_the_United_States.svg/200px-Flag_of_the_United_States.svg.png" class="topimg"></img>English</a>
-                            <a href="#" onclick="alert('Will be added soon.')"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Flag_of_Germany.svg/200px-Flag_of_Germany.svg.png" class="topimg"></img>German</a>
-                            <a href="#" onclick="alert('Will be added soon.')"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Flag_of_Spain.svg/200px-Flag_of_Spain.svg.png" class="topimg"></img>Spanish</a>
-                            <a href="#" onclick="alert('Will be added soon.')"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Flag_of_France.svg/200px-Flag_of_France.svg.png" class="topimg"></img>French</a>
+                            <a href="javascript:void(0)" onclick="alert('Language already set to English.')"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Flag_of_the_United_States.svg/200px-Flag_of_the_United_States.svg.png" class="topimg"></img>English</a>
+                            <a href="javascript:void(0)" onclick="alert('Will be added soon.')"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Flag_of_Germany.svg/200px-Flag_of_Germany.svg.png" class="topimg"></img>German</a>
+                            <a href="javascript:void(0)" onclick="alert('Will be added soon.')"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Flag_of_Spain.svg/200px-Flag_of_Spain.svg.png" class="topimg"></img>Spanish</a>
+                            <a href="javascript:void(0)" onclick="alert('Will be added soon.')"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Flag_of_France.svg/200px-Flag_of_France.svg.png" class="topimg"></img>French</a>
                         </div>
                     </div>
-                    <!--Make a dropdown for this info stuff-->
                     <a href="javascript:void(0);" class="icon" onclick="navbar()">&#9776;</a>
                 </div>
                 <div class="alert" id="al" style="display: none">
@@ -105,7 +99,7 @@
                     <div id="paxticket" class="hide">
                     <h4>PAX Ticket Calculator</h4>
                     <label for="distancePaxTicket">Route Distance</label>
-                    <input type="number" id="distancePaxTicket" placeholder="Distance (km)"><br>
+                    <input type="number" id="distancePaxTicket" placeholder="Distance (km)" maxlength="5"><br>
                     <button onclick="paxticket()">Calculate!</button><br><br>
                     <label for="yTicketRealism">Economy Class (Realism)</label>
                     <input type="text" id="yTicketRealism" class="form-control" readonly><br>
@@ -131,17 +125,17 @@
                         <option>Max. Demand Usage</option>
                     </select><br>
                     <label for="capacitySeat">Capacity</label>
-                    <input type="number" id="capacitySeat" placeholder="Capacity"><br>
+                    <input type="number" id="capacitySeat" placeholder="Capacity" maxlength="3"><br>
                     <label for="distanceSeat">Route Distance</label>
-                    <input type="number" id="distanceSeat" placeholder="Distance (km)"><br>
+                    <input type="number" id="distanceSeat" placeholder="Distance (km)" maxlength="5"><br>
                     <label for="flDaySeat">Flights Per Day</label>
-                    <input type="number" id="flDaySeat" placeholder="Flights Per Day"><br>
+                    <input type="number" id="flDaySeat" placeholder="Flights Per Day" maxlength="2"><br>
                     <label for="yDemandSeat">Y-Class Demand</label>
-                    <input type="number" id="yDemandSeat" placeholder="Y-Class Demand"><br>
+                    <input type="number" id="yDemandSeat" placeholder="Y-Class Demand" maxlength="4"><br>
                     <label for="jDemandSeat">J-Class Demand</label>
-                    <input type="number" id="jDemandSeat" placeholder="J-Class Demand"><br>
+                    <input type="number" id="jDemandSeat" placeholder="J-Class Demand" maxlength="4"><br>
                     <label for="fDemandSeat">F-Class Demand</label>
-                    <input type="number" id="fDemandSeat" placeholder="F-Class Demand"><br>
+                    <input type="number" id="fDemandSeat" placeholder="F-Class Demand" maxlength="3"><br>
                     <button onclick="paxseats()">Calculate!</button><br>
                     <p id="seatTxt">If you want to keep the plane longer than
                         <span id="repayTimeSeat"></span>days, use:
@@ -169,21 +163,21 @@
                     <label for="airplaneProfit">Aircraft Type</label>
                     <input list="acList" type="text" id="airplaneProfit" placeholder="Aircraft Type"><br>
                     <label for="distanceProfit">Route Distance</label>
-                    <input type="number" id="distanceProfit" placeholder="Distance (km)"><br>        
+                    <input type="number" id="distanceProfit" placeholder="Distance (km)" maxlength="5"><br>        
                     <label for="ySeatsProfit">Y-Class Seats</label>
-                    <input type="number" id="ySeatsProfit" placeholder="Y-Class Seats"><br>        
+                    <input type="number" id="ySeatsProfit" placeholder="Y-Class Seats" maxlength="3"><br>        
                     <label for="jSeatsProfit">J-Class Seats</label>
-                    <input type="number" id="jSeatsProfit" placeholder="J-Class Seats"><br>        
+                    <input type="number" id="jSeatsProfit" placeholder="J-Class Seats" maxlength="3"><br>        
                     <label for="fSeatsProfit">F-Class Seats</label>
-                    <input type="number" id="fSeatsProfit"  placeholder="F-Class Seats"><br>        
+                    <input type="number" id="fSeatsProfit"  placeholder="F-Class Seats" maxlength="3"><br>        
                     <label for="flDayProfit">Flights Per Day</label>
-                    <input type="number" id="flDayProfit" placeholder="Flights Per Day"><br>        
+                    <input type="number" id="flDayProfit" placeholder="Flights Per Day" maxlength="2"><br>        
                     <label for="reptProfit">Reputation</label>
-                    <input type="number" id="reptProfit" placeholder="Reputation (%)" max="99"><br>        
+                    <input type="number" id="reptProfit" placeholder="Reputation (%)" max="99" maxlength="2"><br>        
                     <label for="fPrxProfit">Fuel Price</label>
-                    <input type="number" id="fPrxProfit" placeholder="Fuel Price / 1000 lbs"><br>         
+                    <input type="number" id="fPrxProfit" placeholder="Fuel Price / 1000 lbs" maxlength="4"><br>         
                     <label for="cPrxProfit">CO2 Quota Price</label>
-                    <input type="number" id="cPrxProfit" placeholder="CO2 Price / 1000 quotas"><br>                    
+                    <input type="number" id="cPrxProfit" placeholder="CO2 Price / 1000 quotas" maxlength="3"><br>                    
                     <datalist id="acList">
                     </datalist>
                     <button onclick="paxprofit()">Calculate!</button><br><br>
@@ -195,7 +189,7 @@
                     <div id="cticket" class="hide">
                     <h4>Cargo Ticket Calculator</h4>
                     <label for="distanceCTicket">Route Distance</label>
-                    <input type="number" id="distanceCTicket" placeholder="Distance (km)"><br>
+                    <input type="number" id="distanceCTicket" placeholder="Distance (km)" maxlength="5"><br>
                     <button onclick="cticket()">Calculate!</button><br><br>
                     <label for="lTicketRealism">Large Load (Realism)</label>
                     <input type="text" id="lTicketRealism" class="form-control" readonly><br>
@@ -213,13 +207,13 @@
                         <option>Max. Demand Usage</option>
                     </select><br>
                     <label for="capacityLoad">Capacity</label>
-                    <input type="number" id="capacityLoad" placeholder="Capacity"><br>
+                    <input type="number" id="capacityLoad" placeholder="Capacity" maxlength="6"><br>
                     <label for="lDemandLoad">Large Load Demand</label>
-                    <input type="number" id="lDemandLoad" placeholder="Large Load Demand (lbs/day)"><br>
+                    <input type="number" id="lDemandLoad" placeholder="Large Load Demand (lbs/day)" maxlength="7"><br>
                     <label for="hDemandLoad">Heavy Load Demand</label>
-                    <input type="number" id="hDemandLoad" placeholder="Heavy Load Demand (lbs/day)"><br>
+                    <input type="number" id="hDemandLoad" placeholder="Heavy Load Demand (lbs/day)" maxlength="8"><br>
                     <label for="flDayLoad">Flights Per Day</label>
-                    <input type="number" id="flDayLoad" placeholder="Flights Per Day"><br>
+                    <input type="number" id="flDayLoad" placeholder="Flights Per Day" maxlength="2"><br>
                     <button onclick="cseats()">Calculate!</button><br><br>
                     <label for="largeOutput">Large Load</label>
                     <input type="text" id="largeOutput" class="form-control" readonly><br>
@@ -235,19 +229,19 @@
                     <label for="airplaneCP">Aircraft Type</label>
                     <input list="cargolist" type="text" id="airplaneCP" placeholder="Aircraft Type"><br>
                     <label for="distanceCP">Route Distance</label>
-                    <input type="number" id="distanceCP" placeholder="Distance (km)"><br>        
+                    <input type="number" id="distanceCP" placeholder="Distance (km)" maxlength="5"><br>        
                     <label for="lCapCP">Large Load Capacity</label>
-                    <input type="number" id="lCapCP" placeholder="Large Load Capacity (lbs)"><br>        
+                    <input type="number" id="lCapCP" placeholder="Large Load Capacity (lbs)" maxlength="6"><br>        
                     <label for="hCapCP">Heavy Load Capacity</label>
-                    <input type="number" id="hCapCP" placeholder="Heavy Load Capacity (lbs)"><br>        
+                    <input type="number" id="hCapCP" placeholder="Heavy Load Capacity (lbs)" maxlength="6"><br>        
                     <label for="flDayCP">Flights Per Day</label>
-                    <input type="number" id="flDayCP" placeholder="Flights Per Day"><br>        
+                    <input type="number" id="flDayCP" placeholder="Flights Per Day" maxlength="2"><br>        
                     <label for="reptCP">Reputation</label>
-                    <input type="number" id="reptCP" placeholder="Reputation (%)" max="99"><br>        
+                    <input type="number" id="reptCP" placeholder="Reputation (%)" max="99" maxlength="2"><br>        
                     <label for="fPrxCP">Fuel Price</label>
-                    <input type="number" id="fPrxCP" placeholder="Fuel Price / 1000 lbs"><br>         
+                    <input type="number" id="fPrxCP" placeholder="Fuel Price / 1000 lbs" maxlength="4"><br>         
                     <label for="cPrxCP">CO2 Quota Price</label>
-                    <input type="number" id="cPrxCP" placeholder="CO2 Price / 1000 quotas"><br>
+                    <input type="number" id="cPrxCP" placeholder="CO2 Price / 1000 quotas" maxlength="3"><br>
                     <button onclick="cprofit()">Calculate!</button><br><br>
                     <datalist id="cargolist">
                         <option value="DC3"></option>
@@ -283,10 +277,10 @@
                     <input list="arrListStopover" type="text" id="arrivalStopover" placeholder="IATA/ICAO/City Name"><br>
     
                     <label for="rangeStopover">Aircraft Range</label>
-                    <input type="number" id="rangeStopover" placeholder="Range (km)"><br>
+                    <input type="number" id="rangeStopover" placeholder="Range (km)" maxlength="5"><br>
                     
                     <label for="rwyStopover">Runway Requirement (optional)</label>
-                    <input type="number" id="rwyStopover" placeholder="Runway Requirement (ft)"><br>
+                    <input type="number" id="rwyStopover" placeholder="Runway Requirement (ft)" maxlength="5"><br>
     
                     <button onclick="search()">Search!</button><br><br>
     
@@ -318,13 +312,13 @@
                     <label for="airplaneResell">Aircraft Type</label>
                     <input list="acListResell" type="text" id="airplaneResell" placeholder="Aircraft Type"><br>
                     <label for="marketPercentResell">Market%</label>
-                    <input type="number" id="marketPercentResell" placeholder="Market Percent"><br>
+                    <input type="number" id="marketPercentResell" placeholder="Market Percent" maxlength="2"><br>
                     <label for="jSeatsResell">J-Class Seats</label>
-                    <input type="number" id="jSeatsResell" placeholder="J-Class Seats"><br>
+                    <input type="number" id="jSeatsResell" placeholder="J-Class Seats" maxlength="3"><br>
                     <label for="fSeatsResell">F-Class Seats</label>
-                    <input type="number" id="fSeatsResell" placeholder="F-Class Seats"><br>
+                    <input type="number" id="fSeatsResell" placeholder="F-Class Seats" maxlength="4"><br>
                     <label for="hoursResell">Flight Hours</label>
-                    <input type="number" id="hoursResell" placeholder="Flight Hours"><br>
+                    <input type="number" id="hoursResell" placeholder="Flight Hours" maxlength="5"><br>
                     <button onclick="resell()">Calculate!</button><br><br>
                     <label for="resellV">Resell Value</label>
                     <input type="text" id="resellV" class="form-control" readonly>
