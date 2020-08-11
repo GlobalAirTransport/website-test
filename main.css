@@ -77,11 +77,13 @@ label {
     display: none;
 }
 .alert {
-    padding: 20px;
-    background-color: #f44336;
-    color: white;
-    margin-bottom: 15px;
-    border-radius: 6px;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  padding: 20px;
+  background-color: #f44336;
+  border-radius: 6px;
+  color: white;
 }
 .closebtn {
     margin-left: 15px;
