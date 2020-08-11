@@ -91,10 +91,10 @@
                   </div> 
                 <div class="content">
                     <div id="home">
-                            <h3>AM4info Guides And Tools</h3>
-                            <p>Our AM4info.com website is finally available!</p>
-                            More release notes will be added soon
-                            <!--More release notes here-->
+                        <div id="home-backg">
+                            <h2>The AM4info.com tool website is finally available!</h2>
+                            <p>Our promise: A new, reliable and handy AM4 website</p>
+                        </div>
                     </div>
                     <div id="paxticket" class="hide">
                     <h4>PAX Ticket Calculator</h4>
@@ -125,17 +125,17 @@
                         <option>Max. Demand Usage</option>
                     </select><br>
                     <label for="capacitySeat">Capacity</label>
-                    <input type="number" id="capacitySeat" placeholder="Capacity" maxlength="3"><br>
+                    <input type="text" id="capacitySeat" placeholder="Capacity" maxlength="3"><br>
                     <label for="distanceSeat">Route Distance</label>
-                    <input type="number" id="distanceSeat" placeholder="Distance (km)" maxlength="5"><br>
+                    <input type="text" id="distanceSeat" placeholder="Distance (km)" maxlength="5"><br>
                     <label for="flDaySeat">Flights Per Day</label>
-                    <input type="number" id="flDaySeat" placeholder="Flights Per Day" maxlength="2"><br>
+                    <input type="text" id="flDaySeat" placeholder="Flights Per Day" maxlength="2"><br>
                     <label for="yDemandSeat">Y-Class Demand</label>
-                    <input type="number" id="yDemandSeat" placeholder="Y-Class Demand" maxlength="4"><br>
+                    <input type="text" id="yDemandSeat" placeholder="Y-Class Demand" maxlength="4"><br>
                     <label for="jDemandSeat">J-Class Demand</label>
-                    <input type="number" id="jDemandSeat" placeholder="J-Class Demand" maxlength="4"><br>
+                    <input type="text" id="jDemandSeat" placeholder="J-Class Demand" maxlength="4"><br>
                     <label for="fDemandSeat">F-Class Demand</label>
-                    <input type="number" id="fDemandSeat" placeholder="F-Class Demand" maxlength="3"><br>
+                    <input type="text" id="fDemandSeat" placeholder="F-Class Demand" maxlength="3"><br>
                     <button onclick="paxseats()">Calculate!</button><br>
                     <p id="seatTxt">If you want to keep the plane longer than
                         <span id="repayTimeSeat"></span>days, use:
@@ -163,21 +163,21 @@
                     <label for="airplaneProfit">Aircraft Type</label>
                     <input list="acList" type="text" id="airplaneProfit" placeholder="Aircraft Type"><br>
                     <label for="distanceProfit">Route Distance</label>
-                    <input type="number" id="distanceProfit" placeholder="Distance (km)" maxlength="5"><br>        
+                    <input type="text" id="distanceProfit" placeholder="Distance (km)" maxlength="5"><br>        
                     <label for="ySeatsProfit">Y-Class Seats</label>
-                    <input type="number" id="ySeatsProfit" placeholder="Y-Class Seats" maxlength="3"><br>        
+                    <input type="text" id="ySeatsProfit" placeholder="Y-Class Seats" maxlength="3"><br>        
                     <label for="jSeatsProfit">J-Class Seats</label>
-                    <input type="number" id="jSeatsProfit" placeholder="J-Class Seats" maxlength="3"><br>        
+                    <input type="text" id="jSeatsProfit" placeholder="J-Class Seats" maxlength="3"><br>        
                     <label for="fSeatsProfit">F-Class Seats</label>
-                    <input type="number" id="fSeatsProfit"  placeholder="F-Class Seats" maxlength="3"><br>        
+                    <input type="text" id="fSeatsProfit"  placeholder="F-Class Seats" maxlength="3"><br>        
                     <label for="flDayProfit">Flights Per Day</label>
-                    <input type="number" id="flDayProfit" placeholder="Flights Per Day" maxlength="2"><br>        
+                    <input type="text" id="flDayProfit" placeholder="Flights Per Day" maxlength="2"><br>        
                     <label for="reptProfit">Reputation</label>
-                    <input type="number" id="reptProfit" placeholder="Reputation (%)" max="99" maxlength="2"><br>        
+                    <input type="text" id="reptProfit" placeholder="Reputation (%)" max="99" maxlength="2"><br>        
                     <label for="fPrxProfit">Fuel Price</label>
-                    <input type="number" id="fPrxProfit" placeholder="Fuel Price / 1000 lbs" maxlength="4"><br>         
+                    <input type="text" id="fPrxProfit" placeholder="Fuel Price / 1000 lbs" maxlength="4"><br>         
                     <label for="cPrxProfit">CO2 Quota Price</label>
-                    <input type="number" id="cPrxProfit" placeholder="CO2 Price / 1000 quotas" maxlength="3"><br>                    
+                    <input type="text" id="cPrxProfit" placeholder="CO2 Price / 1000 quotas" maxlength="3"><br>                    
                     <datalist id="acList">
                     </datalist>
                     <button onclick="paxprofit()">Calculate!</button><br><br>
@@ -189,7 +189,7 @@
                     <div id="cticket" class="hide">
                     <h4>Cargo Ticket Calculator</h4>
                     <label for="distanceCTicket">Route Distance</label>
-                    <input type="number" id="distanceCTicket" placeholder="Distance (km)" maxlength="5"><br>
+                    <input type="text" id="distanceCTicket" placeholder="Distance (km)" maxlength="5"><br>
                     <button onclick="cticket()">Calculate!</button><br><br>
                     <label for="lTicketRealism">Large Load (Realism)</label>
                     <input type="text" id="lTicketRealism" class="form-control" readonly><br>
@@ -207,13 +207,13 @@
                         <option>Max. Demand Usage</option>
                     </select><br>
                     <label for="capacityLoad">Capacity</label>
-                    <input type="number" id="capacityLoad" placeholder="Capacity" maxlength="6"><br>
+                    <input type="text" id="capacityLoad" placeholder="Capacity" maxlength="6"><br>
                     <label for="lDemandLoad">Large Load Demand</label>
-                    <input type="number" id="lDemandLoad" placeholder="Large Load Demand (lbs/day)" maxlength="7"><br>
+                    <input type="text" id="lDemandLoad" placeholder="Large Load Demand (lbs/day)" maxlength="7"><br>
                     <label for="hDemandLoad">Heavy Load Demand</label>
-                    <input type="number" id="hDemandLoad" placeholder="Heavy Load Demand (lbs/day)" maxlength="8"><br>
+                    <input type="text" id="hDemandLoad" placeholder="Heavy Load Demand (lbs/day)" maxlength="8"><br>
                     <label for="flDayLoad">Flights Per Day</label>
-                    <input type="number" id="flDayLoad" placeholder="Flights Per Day" maxlength="2"><br>
+                    <input type="text" id="flDayLoad" placeholder="Flights Per Day" maxlength="2"><br>
                     <button onclick="cseats()">Calculate!</button><br><br>
                     <label for="largeOutput">Large Load</label>
                     <input type="text" id="largeOutput" class="form-control" readonly><br>
@@ -229,19 +229,19 @@
                     <label for="airplaneCP">Aircraft Type</label>
                     <input list="cargolist" type="text" id="airplaneCP" placeholder="Aircraft Type"><br>
                     <label for="distanceCP">Route Distance</label>
-                    <input type="number" id="distanceCP" placeholder="Distance (km)" maxlength="5"><br>        
+                    <input type="text" id="distanceCP" placeholder="Distance (km)" maxlength="5"><br>        
                     <label for="lCapCP">Large Load Capacity</label>
-                    <input type="number" id="lCapCP" placeholder="Large Load Capacity (lbs)" maxlength="6"><br>        
+                    <input type="text" id="lCapCP" placeholder="Large Load Capacity (lbs)" maxlength="6"><br>        
                     <label for="hCapCP">Heavy Load Capacity</label>
-                    <input type="number" id="hCapCP" placeholder="Heavy Load Capacity (lbs)" maxlength="6"><br>        
+                    <input type="text" id="hCapCP" placeholder="Heavy Load Capacity (lbs)" maxlength="6"><br>        
                     <label for="flDayCP">Flights Per Day</label>
-                    <input type="number" id="flDayCP" placeholder="Flights Per Day" maxlength="2"><br>        
+                    <input type="text" id="flDayCP" placeholder="Flights Per Day" maxlength="2"><br>        
                     <label for="reptCP">Reputation</label>
-                    <input type="number" id="reptCP" placeholder="Reputation (%)" max="99" maxlength="2"><br>        
+                    <input type="text" id="reptCP" placeholder="Reputation (%)" max="99" maxlength="2"><br>        
                     <label for="fPrxCP">Fuel Price</label>
-                    <input type="number" id="fPrxCP" placeholder="Fuel Price / 1000 lbs" maxlength="4"><br>         
+                    <input type="text" id="fPrxCP" placeholder="Fuel Price / 1000 lbs" maxlength="4"><br>         
                     <label for="cPrxCP">CO2 Quota Price</label>
-                    <input type="number" id="cPrxCP" placeholder="CO2 Price / 1000 quotas" maxlength="3"><br>
+                    <input type="text" id="cPrxCP" placeholder="CO2 Price / 1000 quotas" maxlength="3"><br>
                     <button onclick="cprofit()">Calculate!</button><br><br>
                     <datalist id="cargolist">
                         <option value="DC3"></option>
@@ -277,10 +277,10 @@
                     <input list="arrListStopover" type="text" id="arrivalStopover" placeholder="IATA/ICAO/City Name"><br>
     
                     <label for="rangeStopover">Aircraft Range</label>
-                    <input type="number" id="rangeStopover" placeholder="Range (km)" maxlength="5"><br>
+                    <input type="text" id="rangeStopover" placeholder="Range (km)" maxlength="5"><br>
                     
                     <label for="rwyStopover">Runway Requirement (optional)</label>
-                    <input type="number" id="rwyStopover" placeholder="Runway Requirement (ft)" maxlength="5"><br>
+                    <input type="text" id="rwyStopover" placeholder="Runway Requirement (ft)" maxlength="5"><br>
     
                     <button onclick="search()">Search!</button><br><br>
     
@@ -312,13 +312,13 @@
                     <label for="airplaneResell">Aircraft Type</label>
                     <input list="acListResell" type="text" id="airplaneResell" placeholder="Aircraft Type"><br>
                     <label for="marketPercentResell">Market%</label>
-                    <input type="number" id="marketPercentResell" placeholder="Market Percent" maxlength="2"><br>
+                    <input type="text" id="marketPercentResell" placeholder="Market Percent" maxlength="2"><br>
                     <label for="jSeatsResell">J-Class Seats</label>
-                    <input type="number" id="jSeatsResell" placeholder="J-Class Seats" maxlength="3"><br>
+                    <input type="text" id="jSeatsResell" placeholder="J-Class Seats" maxlength="3"><br>
                     <label for="fSeatsResell">F-Class Seats</label>
-                    <input type="number" id="fSeatsResell" placeholder="F-Class Seats" maxlength="4"><br>
+                    <input type="text" id="fSeatsResell" placeholder="F-Class Seats" maxlength="4"><br>
                     <label for="hoursResell">Flight Hours</label>
-                    <input type="number" id="hoursResell" placeholder="Flight Hours" maxlength="5"><br>
+                    <input type="text" id="hoursResell" placeholder="Flight Hours" maxlength="5"><br>
                     <button onclick="resell()">Calculate!</button><br><br>
                     <label for="resellV">Resell Value</label>
                     <input type="text" id="resellV" class="form-control" readonly>
