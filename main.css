@@ -95,4 +95,8 @@ label {
 }
 .closebtn:hover {
     color: black;
-} 
+}
+#home-backg {
+    background-color: #17d1ff;
+    opacity; 0.4;
+}
